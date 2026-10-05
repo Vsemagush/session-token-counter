@@ -46,9 +46,9 @@ test('registers one right-aligned status bar item', async () => {
   assert.equal(contributions[0].order, 135)
 })
 
-test('refuses to register on a build without focusedUsage', async () => {
+test('refuses to register on a build without focusedUsage, naming the field', async () => {
   // `null` — not `undefined`, which would just re-trigger the default parameter.
-  await assert.rejects(loadPlugin(null), /focusedUsage/)
+  await assert.rejects(loadPlugin(null), /host\.state\.focusedUsage[\s\S]*0\.20\.2/)
 })
 
 test('renders the compact total and the context share', async () => {

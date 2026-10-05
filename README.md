@@ -35,7 +35,7 @@ live `UsageStats` the core status bar reads.
 
 ## Install
 
-**In-app (recommended).** Settings → Plugins → **Install from Git**, and use the identifier:
+**Install from Git.** Settings → Plugins → **Install from Git**, and use the identifier:
 
 ```
 Vsemagush/session-token-counter
@@ -47,6 +47,12 @@ Vsemagush/session-token-counter
 <a href="hermes://plugin/install?repo=Vsemagush/session-token-counter&enable=1">Install in Hermes</a>
 ```
 
+The same target as a plain URL, for pasting into the app or a message:
+
+```
+hermes://plugin/install?repo=Vsemagush/session-token-counter&enable=1
+```
+
 **By hand.** Copy `desktop/plugin.js` to the app-level plugin root and reload:
 
 ```
@@ -55,15 +61,6 @@ $HERMES_HOME/desktop-plugins/session-token-counter/plugin.js
 
 (`~/.hermes/desktop-plugins/...` by default; the folder name must match the plugin `id`.)
 Then run ⌘K → **Reload desktop plugins**. The app hot-reloads the file on every later save.
-
-## Limitations
-
-- `total` is what the gateway reports for the session, not a billing figure. A resumed
-  session's counter reflects what the running backend has accumulated, not necessarily
-  every token ever spent in that session's history.
-- `context` is window occupancy, not spend: the same transcript is re-sent on every model
-  call, so accumulated input tokens grow far faster than the context window.
-- The tooltip says `-` for any field the backend has not reported yet.
 
 ## Development
 

@@ -50,7 +50,7 @@ const plugin = {
   register(ctx) {
     if (!host.state.focusedUsage) {
       throw new Error(
-        'Desktop не предоставляет focusedUsage. Требуется новая версия Desktop'
+        'This Hermes Desktop build does not expose host.state.focusedUsage — update Hermes to 0.20.2 or newer.'
       )
     }
 
